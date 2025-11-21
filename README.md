@@ -32,7 +32,7 @@ The `scripts` directory contain scripts to reproduce the results from the CircPl
 
 # Plot Generation
 
-For generating plots, run the following command:
+For generating plots, run the following command.
 ```
 python3 scripts/plot.py data/{tissue}/{tissue}_features_A_combined.tsv data/{tissue}/{tissue}_features_AAbar_combined.tsv <output-driectory>
 ```
