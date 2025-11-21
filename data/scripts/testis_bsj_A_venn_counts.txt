@@ -1,0 +1,11 @@
+Region	Count
+Total_cirplex	117045
+Total_circbase	92369
+Total_isocirc	137128
+cirplex_only	98636
+circbase_only	72976
+isocirc_only	113161
+cirplex_and_circbase	3553
+cirplex_and_isocirc	6130
+circbase_and_isocirc	17433
+cirplex_and_circbase_and_isocirc	8726
