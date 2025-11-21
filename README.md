@@ -8,7 +8,7 @@ Reproducing the results of CircPlex requires C++11 and python3.
 
 # Data
 
-The `data` folder contains integrated information from CircPlex experiments. There are two subdirectories `data/testis` and `data/brain` that contain information from the testis and brain sample respectively. The description of the files are as follows:
+The `data` folder contains integrated information from CircPlex experiments. There are two subdirectories `data/testis` and `data/brain` that contain information from the testis and brain sample respectively.
 
 `data/{tissue}/{tissue}_features_A_combined.tsv` - Details of circRNAs sseqeunces predicted by CircPlex from rolling circular nanopore long reads.
 
