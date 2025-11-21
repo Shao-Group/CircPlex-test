@@ -36,7 +36,7 @@ For generating plots, run the following command.
 ```
 python3 scripts/plot.py data/{tissue}/{tissue}_features_A_combined.tsv data/{tissue}/{tissue}_features_AAbar_combined.tsv <output-driectory>
 ```
-Two PDF files `{tissue}_A_hist.pdf` and `{tissue}_AAbar_hist.pdf` will be generated inside `<output-directory>` 
+Output PDF files `{tissue}_A_hist.pdf` and `{tissue}_AAbar_hist.pdf` will be generated inside `<output-directory>` 
 
 # Overlap Comparison
 
@@ -64,5 +64,5 @@ Run the follwoing command.
 scripts/compare /data/{tissue}/{tissue}_{bsj/cluster}_{A/A_0.1}.tsv <tissue-isocirc-annotation (filtered isocirc.out file)> <circBase-bed-file> <output-directory>
 ```
 
-An output file `{tissue}_{bsj/cluster}_{A/A_0.1}_venn_counts.txt` will be generated in the output directory with the overlap information.
+Output file `{tissue}_{bsj/cluster}_{A/A_0.1}_venn_counts.txt` will be generated in the output directory with the overlap information.
 
