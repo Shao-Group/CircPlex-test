@@ -64,5 +64,5 @@ Run the follwoing command.
 scripts/compare /data/{tissue}/{tissue}_{bsj/cluster}_{A/A_0.1}.tsv <tissue-isocirc-annotation (filtered isocirc.out file)> <circBase-bed-file> <output-directory>
 ```
 
-Output file `{tissue}_{bsj/cluster}_{A/A_0.1}_venn_counts.txt` will be generated in the output directory with the overlap information.
+Output file `{tissue}_{bsj/cluster}_{A/A_0.1}_venn_counts.txt` will be generated inside `<output-directory>` with the overlap information.
 
