@@ -32,11 +32,11 @@ The `scripts` directory contain scripts to reproduce the results from the CircPl
 
 # Plot Generation
 
-For generating plots, use the following command:
+For generating plots, run the following command:
 ```
 python3 scripts/plot.py data/{tissue}/{tissue}_features_A_combined.tsv data/{tissue}/{tissue}_features_AAbar_combined.tsv <output-driectory>
 ```
-Running the above command will generate two PDF files `{tissue}_A_hist.pdf` and `{tissue}_AAbar_hist.pdf` inside `<output-directory>` 
+Two PDF files `{tissue}_A_hist.pdf` and `{tissue}_AAbar_hist.pdf` will be generated inside `<output-directory>` 
 
 # Overlap Comparison
 
