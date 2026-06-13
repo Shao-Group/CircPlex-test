@@ -8,19 +8,19 @@ Reproducing the results of CircPlex requires C++11 and python3.
 
 # Data
 
-The `data` folder contains integrated information from CircPlex experiments. There are two subdirectories `data/testis` and `data/brain` that contain information from the testis and brain sample respectively.
+The `data` folder contains integrated information from CircPlex experiments. There are two subdirectories `data/EquiRep` and `data/TideHunter` that contain folders `brain` and `testis` with information from the testis and brain sample respectively.
 
-`data/{tissue}/{tissue}_features_A_combined.tsv` - Details of circRNAs sseqeunces predicted by CircPlex from rolling circular nanopore long reads.
+`data/{tool}/{tissue}/{tissue}_features_A_combined.tsv` - Details of circRNAs sseqeunces predicted by CircPlex from rolling circular nanopore long reads.
 
-`data/{tissue}/{tissue}_features_AAbar_combined.tsv` - Details of seqeunces containing circRNA and its partial reverse complement from rolling circular nanopore long reads.
+`data/{tool}/{tissue}/{tissue}_features_AAbar_combined.tsv` - Details of seqeunces containing circRNA and its partial reverse complement from rolling circular nanopore long reads.
 
-`data/{tissue}/{tissue}_bsj_A.tsv` - Details of back-splicing junctions from circRNAs predicted by CircPlex.
+`data/{tool}/{tissue}/{tissue}_bsj_A.tsv` - Details of back-splicing junctions from circRNAs predicted by CircPlex.
 
-`data/{tissue}/{tissue}_bsj_A_0.1.tsv` - Details of back-splicing junctions from circRNAs predicted by CircPlex that have absolute over-prediction ratio ≤ 1.
+`data/{tool}/{tissue}/{tissue}_bsj_A_0.1.tsv` - Details of back-splicing junctions from circRNAs predicted by CircPlex that have absolute over-prediction ratio ≤ 1.
 
-`data/{tissue}/{tissue}_bsj_cluster_A.tsv` - Details of clustered back-splicing junctions from circRNAs predicted by CircPlex.
+`data/{tool}/{tissue}/{tissue}_bsj_cluster_A.tsv` - Details of clustered back-splicing junctions from circRNAs predicted by CircPlex.
 
-`data/{tissue}/{tissue}_bsj_cluster_A_0.1.tsv` - Details of clustered back-splicing junctions from circRNAs predicted by CircPlex that have absolute over-prediction ratio ≤ 1.
+`data/{tool}/{tissue}/{tissue}_bsj_cluster_A_0.1.tsv` - Details of clustered back-splicing junctions from circRNAs predicted by CircPlex that have absolute over-prediction ratio ≤ 1.
 
 # Scripts
 
@@ -34,13 +34,13 @@ The `scripts` directory contain scripts to reproduce the results from the CircPl
 
 For generating plots, run the following command.
 ```
-python3 scripts/plot.py data/{tissue}/{tissue}_features_A_combined.tsv data/{tissue}/{tissue}_features_AAbar_combined.tsv <output-driectory>
+python3 scripts/plot.py data/{tool}/{tissue}/{tissue}_features_A_combined.tsv data/{tool}/{tissue}/{tissue}_features_AAbar_combined.tsv <output-driectory>
 ```
 Output files `{tissue}_A_hist.pdf` and `{tissue}_AAbar_hist.pdf` will be generated inside `<output-directory>`. 
 
 # Overlap Comparison
 
-The cpp file `scripts/compare.cpp` takes as input a BSJ file from the `/data/{tissue}` folder, the isocirc annotaion (isocirc.out) file for the tissue and circBase annotation (bed) file. An output file `{prefix}_venn_counts.txt` is generated in the specified output directory that summarizes the overlap counts between CircPlex, isoCirc and circBase. The `{prefix}` will be automiatically generated based on the input BSJ file.
+The cpp file `scripts/compare.cpp` takes as input a BSJ file from the `/data/{tool}/{tissue}` folder, the isocirc annotaion (isocirc.out) file for the tissue and circBase annotation (bed) file. An output file `{prefix}_venn_counts.txt` is generated in the specified output directory that summarizes the overlap counts between CircPlex, isoCirc and circBase. The `{prefix}` will be automiatically generated based on the input BSJ file.
 
 To generate isoCirc annotations, download the corresponding long reads data for human testis and brain sampples from GEO accession number: GSE141693. Then run the tool isoCirc on the testis and brain reads to get respective isoCirc annotations. Note that the isoCirc annotations used in CircPlex evaluation are filtered to remove duplicate BSJs and partial circRNAs.
 
@@ -61,7 +61,7 @@ g++ -O3 scripts/comapre.cpp -o scripts/compare
 
 Run the follwoing command.
 ```
-scripts/compare /data/{tissue}/{tissue}_{bsj/cluster}_{A/A_0.1}.tsv <tissue-isocirc-annotation (filtered isocirc.out file)> <circBase-bed-file> <output-directory>
+scripts/compare /data/{tool}/{tissue}/{tissue}_{bsj/cluster}_{A/A_0.1}.tsv <tissue-isocirc-annotation (filtered isocirc.out file)> <circBase-bed-file> <output-directory>
 ```
 
 Output file `{tissue}_{bsj/cluster}_{A/A_0.1}_venn_counts.txt` will be generated inside `<output-directory>` with the overlap information.
